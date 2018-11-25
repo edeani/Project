@@ -1,0 +1,77 @@
+/*Diseloj.css*/
+* {
+	
+margin:0;
+padding:0;
+-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+
+}
+
+.wrap{
+	
+width:20%;
+max-width:850px;
+position:fixed;
+ z-index:1000;
+left:0px;
+top:0px;
+}
+
+.widget{
+
+
+width:100%;
+margin:2em;
+
+}
+.widget p {
+font-size: 15px;	
+display: inline-block;
+line-height:1em;
+
+}
+
+.fecha{
+
+font-family: Oswald , Arial;
+text-align:left;
+font-size:1.5em;
+margin-bottom:0.3125rem;
+z-index:1000;
+background: rgba(0,0,0,.5);
+color:#fff;
+padding:5px;
+width:100%	
+
+}
+
+.reloj{
+
+font-family: Oswald , Arial;
+text-align:left;
+font-size:1.5em;
+margin-bottom:0.3125rem;
+ z-index:1000;
+color:#fff;
+background: rgba(0,0,0,.5);
+padding:5px;
+width:100%	
+
+
+}
+
+.reloj .caja-seg{
+	
+display: inline-block;
+
+}
+
+.reloj .seg,
+.reloj .ampm{
+color:#fff;	
+font-size:1rem;
+display:block;
+
+}

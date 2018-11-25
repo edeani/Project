@@ -1,0 +1,37 @@
+.body1{
+
+background:url(../img/Fondo/kayn.jpg);
+
+}
+
+.body2{
+
+background:url(../img/Fondo/garen.jpg) no-repeat;
+background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+
+}
+
+.imagen1{
+	padding-top: 80px;
+	width: 300px;
+	height: 200px;
+}
+
+.imagen2{
+	
+	width: 300px;
+	height: 100px;
+	margin: auto;
+}
+
+.perfil{
+	width: 60px;
+	height: 60px;
+	margin: auto;
+
+
+}
+
