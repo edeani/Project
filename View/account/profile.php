@@ -11,16 +11,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <link rel="stylesheet" href="styles/styles_module.css">
     <title>Listado de estudiantes</title>
-    <link rel="stylesheet" href="../css/estilos.css">
-    <link rel="stylesheet" href="../css/imagenes.css">
-    <link rel="stylesheet" href="../Diseloj.css">
+    <link rel="stylesheet" href="/css/estilos.css">
+    <link rel="stylesheet" href="/css/imagenes.css">
+    <link rel="stylesheet" href="/Diseloj.css">
      <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
         <link rel="shortcut icon" href="img/escudo1.png" type="img/x-icon">
     <script src="src/source_module.js"></script>
 </head>
 <header id="header" class="headerLis">
 <div >
-    <center><img src="../img/lol.png" alt="League Of Legends" class="imagen2"></center>
+    <center><img src="/img/lol.png" alt="League Of Legends" class="imagen2"></center>
 </div>
 </header><!-- /header -->
 <body class="body2">
@@ -39,18 +39,41 @@
 
     <div class="container">
 
-
-       <center><p>Lista de cursos asignados</p></center>
-        <table class="table">
-            <?php
-                include "../Model/Class/class_Connexion.php";
-                include "../Controller/Services/svc_Connexion.php";
-                $Query = $Connexion->query("SELECT c.name, c.id_course FROM course AS c INNER JOIN courses_teachers AS ct ON ct.id_course = c.id_course INNER JOIN teacher AS t ON t.id = ct.id_teacher");
-                $row = $Query->fetch_assoc();
-            ?>
-            <td><a href="list_course.php?id=<?php echo $row["id_course"]?>" class="boton-personalizado "><?php echo $row["name"]?></a></td>
-        </table>
-
+       <div class="container-title-small">
+         <center class="normalTitle"><p>Lista de cursos asignados</p></center>
+       </div>
+       <div class="foto-perfil">
+         <img src="/img/account/default.png"/>
+       </div>
+       <div class="data-student">
+         <div class="attr-student">
+           <div class="label-attr">
+             <label>Nombres</label>
+           </div>
+           <input type="text" id="nombre" name="nombre"/>
+         </div>
+         <div class="attr-student">
+           <div class="label-attr">
+             <label>Apellidos</label>
+           </div>
+           <input type="text" id="apellidos" name="apellidos"/>
+         </div>
+         <div class="attr-student">
+           <div class="label-attr">
+             <label>Edad</label>
+           </div>
+           <input type="text" id="edad" name="edad"/>
+         </div>
+         <div class="attr-student">
+           <div class="label-attr">
+             <label>Carrera</label>
+           </div>
+           <input type="text" id="carrera" name="carrera"/>
+         </div>
+        </div>
+        <div class="ctrl-btn">
+          <button id="uploa-img">upload</button>
+        </div>
     </div>
  <div class="wrap">
     <div class="widget">

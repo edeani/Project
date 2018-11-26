@@ -17,7 +17,6 @@ error_reporting(E_ERROR);
     <link rel="shortcut icon" href="img/escudo1.png" type="img/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">    <!-- Latest compiled and minified JavaScript -->
->
     <link rel="stylesheet" href="../css/imagenes.css">
     <link rel="stylesheet" href="../Diseloj.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -26,7 +25,7 @@ error_reporting(E_ERROR);
 <header id="header" class="headerLis">
 <div >
     <center><img src="../img/lol.png" alt="League Of Legends" class="imagen2"></center>
-</div>  
+</div>
 </header><!-- /header -->
 <body class="body2">
 
@@ -34,9 +33,9 @@ error_reporting(E_ERROR);
         <img alt="Johan Robles" class="img-circle" src="https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAB8CWOzbbEXgg9av3XtP9NJOJHEqD7zXyc?size=64x64&vers=1428070808936" width="32" height="32">
         <a class="btn btn-primary" href="../Controller/Services/svc_CloseSession.php">Cerrar sesion </a>
     </div>
-  
 
-  
+
+
 
 
     <div class="container">
