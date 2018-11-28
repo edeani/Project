@@ -113,6 +113,7 @@ h3 {
 .attr-student input {
   width: 400px;
   float: left;
+  color: black;
 }
 
 .ctrl-btn{

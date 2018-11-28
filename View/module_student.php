@@ -37,6 +37,7 @@
                $name_student=ucwords(strtolower($_SESSION['nombre']));
                $rol_session=ucwords(strtolower($_SESSION['rol']));
                echo $rol_session.":"?><a href="/View/account/profile.php"> <?php echo $name_student; ?> </a>
+
         </h3>
     </div>
 
@@ -49,10 +50,11 @@
             <?php
                 include "../Model/Class/class_Connexion.php";
                 include "../Controller/Services/svc_Connexion.php";
-                $Query = $Connexion->query("SELECT c.name, c.id_course FROM course AS c INNER JOIN courses_teachers AS ct ON ct.id_course = c.id_course INNER JOIN teacher AS t ON t.id = ct.id_teacher");
+                $query_student = "SELECT cu.id_course,cu.name as name_course,id_student,code,st.name as name_student,st.usuario as username,st.password,st.state FROM course cu inner join courses_students cs on cs.id_course = cu.id_course inner join student st on st.code = cs.id_student where st.code='".$_SESSION["code"]."'";
+                $Query = $Connexion->query($query_student);
                 $row = $Query->fetch_assoc();
             ?>
-            <td><a href="list_course.php?id=<?php echo $row["id_course"]?>" class="boton-personalizado "><?php echo $row["name"]?></a></td>
+            <td><a href="list_course.php?id=<?php echo $row["id_course"]?>" class="boton-personalizado "><?php echo $row["name_course"]?></a></td>
         </table>
 
     </div>

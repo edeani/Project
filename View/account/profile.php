@@ -29,10 +29,14 @@
 
     <div class="" align="right">
         <img alt="Johan Robles" class="img-circle" src="https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAB8CWOzbbEXgg9av3XtP9NJOJHEqD7zXyc?size=64x64&vers=1428070808936" width="32" height="32">
-        <a class="boton-personalizado" href="../Controller/Services/svc_CloseSession.php">Cerrar sesion </a>
+        <a class="boton-personalizado" href="/Controller/Services/svc_CloseSession.php">Cerrar sesion </a>
     </div>
     <div>
-        <h3> Docente: Johan Robles
+        <h3> <?php
+             $name_student=ucwords(strtolower($_SESSION['nombre']));
+             $rol_session=ucwords(strtolower($_SESSION['rol']));
+             echo $rol_session.":".$name_student;
+             ?>
         </h3>
     </div>
 
@@ -50,30 +54,28 @@
            <div class="label-attr">
              <label>Nombres</label>
            </div>
-           <input type="text" id="nombre" name="nombre"/>
+           <input type="text" id="name_student" disabled="disabled" name="name_student" value="<?php echo $name_student ?>"/>
+
          </div>
-         <div class="attr-student">
-           <div class="label-attr">
-             <label>Apellidos</label>
-           </div>
-           <input type="text" id="apellidos" name="apellidos"/>
-         </div>
+
          <div class="attr-student">
            <div class="label-attr">
              <label>Edad</label>
            </div>
-           <input type="text" id="edad" name="edad"/>
+           <input type="text" id="age" disabled="disabled" name="age" value="<?php echo $_SESSION['age'] ?>"/>
+
          </div>
          <div class="attr-student">
            <div class="label-attr">
-             <label>Carrera</label>
+             <label>G&eacute;nero</label>
            </div>
-           <input type="text" id="carrera" name="carrera"/>
+           <input type="text" id="gender" disabled="disabled" name="gender" value="<?php echo $_SESSION['gender'] ?>"/>
+
          </div>
         </div>
-        <div class="ctrl-btn">
+        <!--div class="ctrl-btn">
           <button id="uploa-img">upload</button>
-        </div>
+        </div-->
     </div>
  <div class="wrap">
     <div class="widget">
