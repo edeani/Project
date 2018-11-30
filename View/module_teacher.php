@@ -40,6 +40,13 @@
         </h3>
     </div>
 
+    <div>
+    
+      <a class="boton-personalizado " href="/View/account/chat.html">CHAT</a>
+      
+
+    </div>
+
 
     <div class="container">
 

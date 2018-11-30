@@ -35,7 +35,9 @@ error_reporting(E_ERROR);
     </div>
 
 
-
+<div>
+    <a <button id="btn-modal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1"" href="/View/formulario.php">Enviar Excusa</a>
+</div>
 
 
     <div class="container">
