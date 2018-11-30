@@ -2,6 +2,48 @@
     session_start();
     if(!isset($_SESSION["active"])) header("Location: ../index.php");
     error_reporting(E_ERROR);
+
+    $currentDir = getcwd();
+    $uploadDirectory = "/img/account/";
+
+    $errors = [];
+
+    $fileExtensions = ['jpeg','jpg','png'];
+
+    $fileName = $_FILES['myfile']['name'];
+    $fileSize = $_FILES['myfile']['size'];
+    $fileTmpName  = $_FILES['myfile']['tmp_name'];
+    $fileType = $_FILES['myfile']['type'];
+    $fileExtension = strtolower(end(explode('.',$fileName)));
+
+    //$uploadPath = $currentDir . $uploadDirectory . basename($fileName);
+    $uploadPath = "C:/xampp/htdocs/img/account/" . basename($fileName);
+    if (isset($_POST['submit'])) {
+
+        if (! in_array($fileExtension,$fileExtensions)) {
+            $errors[] = "This file extension is not allowed. Please upload a JPEG or PNG file";
+        }
+
+        if ($fileSize > 2000000) {
+            $errors[] = "This file is more than 2MB. Sorry, it has to be less than or equal to 2MB";
+        }
+
+        if (empty($errors)) {
+            $didUpload = move_uploaded_file($fileTmpName, $uploadPath);
+
+            if ($didUpload) {
+                echo "The file " . basename($fileName) . " has been uploaded ".$fileTmpName." ".$uploadPath;
+            } else {
+                echo "An error occurred somewhere. Try again or contact the admin".$fileTmpName." ".$uploadPath;
+            }
+
+        } else {
+            foreach ($errors as $error) {
+                echo $error . "These are the errors" . "\n";
+            }
+        }
+    }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,6 +59,7 @@
      <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
         <link rel="shortcut icon" href="img/escudo1.png" type="img/x-icon">
     <script src="src/source_module.js"></script>
+
 </head>
 <header id="header" class="headerLis">
 <div >
@@ -72,6 +115,18 @@
            <input type="text" id="gender" disabled="disabled" name="gender" value="<?php echo $_SESSION['gender'] ?>"/>
 
          </div>
+
+
+
+        </div>
+        <div class="container-ptofile-1">
+          <button id="subir-foto">Subir Foto</button>
+        </div>
+        <div class="container-button-upload" style="display:none;">
+          <form id="form-img" action="/View/account/profile.php" method="post" enctype="multipart/form-data">
+            <input type="file" name="myfile" id="fileToUpload">
+            <input type="submit" name="submit" value="Upload File Now" >
+          </form>
         </div>
         <!--div class="ctrl-btn">
           <button id="uploa-img">upload</button>
@@ -112,5 +167,6 @@
               integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
               crossorigin="anonymous"></script>
  <script src="../Reloj.js"></script>
+ <script src="/js/upload-img.js"></script>
 </body>
 </html>

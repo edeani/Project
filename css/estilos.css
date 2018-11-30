@@ -116,12 +116,40 @@ h3 {
   color: black;
 }
 
-.ctrl-btn{
+.container-ptofile-1 {
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+
+.container-button-upload {
+  width: 100px;
+  height: 200px;
+  float: left;
+  margin: 0px 0px 25px 0px;
+}
+
+.container-ptofile-1 button {
+  float: left;
+  width: 100px;
+  height: 50px;
+  background: blue;
+}
+
+.container-button-upload form button {
+  float: left;
+  width: 100px;
+  height: 50px;
+  background: blue;
+}
+
+.ctrl-btn {
   float: left;
   width: 100px;
   height: 50px;
 }
-.ctrl-btn button{
+
+.ctrl-btn button {
   float: left;
   height: 50px;
   width: 100px;
